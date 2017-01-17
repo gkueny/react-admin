@@ -10,16 +10,6 @@ export const checkUserStatus = (callback) => {
 
 };
 
-export const signOutUser = (callbackSucces) => {
-
-    firebase.auth().signOut().then(() => {
-        callbackSucces(true);
-    }, error => {
-        callbackSucces(false);
-    });
-
-};
-
 export const signInUser = (email, password, callbackSucces) => {
 
     firebase.auth().signInWithEmailAndPassword(email, password)
@@ -31,6 +21,17 @@ export const signInUser = (email, password, callbackSucces) => {
     });
 
 };
+
+export const signOutUser = (callbackSucces) => {
+
+    firebase.auth().signOut().then(() => {
+        callbackSucces(true);
+    }, error => {
+        callbackSucces(false);
+    });
+
+};
+
 
 export const registerUser = (email, password, callbackSucces) => {
 
