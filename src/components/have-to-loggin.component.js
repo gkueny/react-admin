@@ -4,7 +4,6 @@ import {checkUserStatus} from '../services/user.service';
 class HaveToLogginComponent extends Component {
 
     componentDidMount() {
-
         checkUserStatus(this.updateUserStatus);
     }
 
