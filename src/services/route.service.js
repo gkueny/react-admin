@@ -34,7 +34,12 @@ export const renderLink = (login = false, link = routes(), toReturn = [], linkFa
         if (login && link.onlyPublic)
             return;
 
-        let to = linkFather !== '' ? linkFather + '/' + link.path : link.path;
+        if (!link.title)
+            return;
+
+        let to = linkFather !== '' ?
+            linkFather + '/' + link.path :
+            link.path;
 
         let linkComponent = (
             <li key={link.id} order={link.order}>
