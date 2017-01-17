@@ -2,11 +2,15 @@ import * as firebase from 'firebase';
 
 export const checkUserStatus = (callback) => {
 
-    let user = firebase.auth().currentUser;
+    firebase.auth().onAuthStateChanged(function(user) {
 
-    let statut = user ? true : false;
+        let statut = user
+            ? true
+            : false;
 
-    callback(statut);
+        callback(statut);
+    });
+
 
 };
 
