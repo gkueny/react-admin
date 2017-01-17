@@ -11,7 +11,6 @@ import allReducers from './reducers';
 
 import * as firebase from 'firebase';
 import {config} from './vars/firebase.config';
-import {userAuth} from './middlewares/user-auth.middleware';
 
 import './assets/css/index.css';
 import {routes} from './vars/route.vars';
@@ -19,7 +18,7 @@ import {routes} from './vars/route.vars';
 firebase.initializeApp(config);
 
 const middleware = routerMiddleware(browserHistory);
-const store = createStore(allReducers, applyMiddleware(middleware,userAuth), autoRehydrate());
+const store = createStore(allReducers, applyMiddleware(middleware), autoRehydrate());
 const history = syncHistoryWithStore(browserHistory, store);
 
 persistStore(store, {blacklist: ['routing']}); //.purge();
