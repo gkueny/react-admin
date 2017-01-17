@@ -12,12 +12,18 @@ function compare(a, b) {
 }
 
 
-export const renderLink = (login = false, link = routes(), toReturn = []) => {
+export const renderLink = (login = false, link = routes(), toReturn = [], linkFather = '') => {
 
     if (link.childRoutes) {
 
+        if(link.path) {
+            linkFather !== '' &&  linkFather !== '/' ?
+                linkFather += '/' + link.path :
+                linkFather = link.path ;
+        }
+
         link.childRoutes.forEach((children, index) => {
-            renderLink(login, children, toReturn);
+            renderLink(login, children, toReturn, linkFather);
         });
 
     } else {
@@ -28,9 +34,11 @@ export const renderLink = (login = false, link = routes(), toReturn = []) => {
         if (login && link.onlyPublic)
             return;
 
+        let to = linkFather !== '' ? linkFather + '/' + link.path : link.path;
+
         let linkComponent = (
             <li key={link.id} order={link.order}>
-                <Link to={link.path}>
+                <Link to={to}>
                     {link.title}
                 </Link>
             </li>
