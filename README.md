@@ -1,6 +1,22 @@
+
 # React - Redux starter kit
 
 Ce starter a été créé à partir de la commande [create-react-app](https://github.com/facebookincubator/create-react-app)
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Sommaire**
+
+- [Installation](#installation)
+  - [Télécharger le kit](#t%C3%A9l%C3%A9charger-le-kit)
+  - [Installer les dépendances et lancer le projet](#installer-les-d%C3%A9pendances-et-lancer-le-projet)
+- [Service d'authentification](#service-dauthentification)
+- [Paramétrer firebase](#param%C3%A9trer-firebase)
+- [Les routes](#les-routes)
+  - [Les routes protégées](#les-routes-prot%C3%A9g%C3%A9es)
+  - [Les paramètres supplémentaires](#les-param%C3%A8tres-suppl%C3%A9mentaires)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Installation
 
