@@ -9,7 +9,7 @@ Ce starter a été créé à partir de la commande [create-react-app](https://gi
 ```
 git clone https://github.com/gkueny/react-admin.git
 
-cd react-redux-starter-kit
+cd react-admin
 ```
 
 ### Installer les dépendances et lancer le projet
