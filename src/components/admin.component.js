@@ -1,13 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const AdminComponent = props => {
+import '../assets/css/admin.css';
+import {renderLinkAdmin} from '../services/route.service';
 
-    return (
-        <p>
-            Secret
-        </p>
-    );
+class AdminComponent extends Component {
 
+    render() {
+        return (
+            <div className="Admin">
+                <nav>
+                    <ul>
+                        {renderLinkAdmin(this.props.state.general.userLogin)}
+                    </ul>
+                </nav>
+
+                <p> secret </p>
+
+            </div>
+        );
+    }
+
+}
+
+AdminComponent.propTypes = {
+    children: React.PropTypes.object,
+    state: React.PropTypes.object
 };
 
 export default AdminComponent;

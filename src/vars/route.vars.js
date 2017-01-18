@@ -7,7 +7,7 @@ import AppContainer from '../containers/app.container';
 import HeaderContainer from '../containers/header.container';
 import LoginContainer from '../containers/login.container';
 import RegisterContainer from '../containers/register.container';
-import AdminComponent from '../components/admin.component';
+import AdminContainer from '../containers/admin.container';
 import HomeContainer from '../containers/home.container';
 
 
@@ -72,11 +72,11 @@ export const routes = (store) => {
                 childRoutes: [
                     {
                         path: '/admin',
-                        component: AdminComponent,
+                        component: AdminContainer,
                         id: 3,
                         title: 'Admin',
                         renderOnHome: true,
-                        renderOnAdmin: true,
+                        renderOnAdmin: false,
                         renderOnAnonymous: false,
                         renderOnLogin: true,
                         order: 1

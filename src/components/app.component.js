@@ -10,7 +10,7 @@ class AppComponent extends Component {
             return <div>loading...</div>;
         }
 
-        return <div>{this.props.children}</div>;
+        return <div className="main">{this.props.children}</div>;
     }
 
 }

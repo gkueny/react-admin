@@ -1,0 +1,14 @@
+.Admin {
+    display: flex;
+    height: 100%;
+}
+
+.Admin ul {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.Admin p {
+    padding: 25px;
+}
