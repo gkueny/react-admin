@@ -30,16 +30,20 @@ export const routes = (store) => {
                         component: HomeContainer,
                         id: 1,
                         title: 'Accueil',
-                        private: false,
-                        onlyPublic: false,
+                        renderOnHome: true,
+                        renderOnAdmin: true,
+                        renderOnAnonymous: true,
+                        renderOnLogin: true,
                         order: 0
                     }, {
                         path: 'login',
                         component: LoginContainer,
                         id: 2,
                         title: 'Connexion',
-                        private: false,
-                        onlyPublic: true,
+                        renderOnHome: true,
+                        renderOnAdmin: false,
+                        renderOnAnonymous: true,
+                        renderOnLogin: false,
                         order: 2
                     }, {
                         path: 'register',
@@ -49,7 +53,10 @@ export const routes = (store) => {
                         path: 'logout',
                         id: 4,
                         title: 'Déconnexion',
-                        private: true,
+                        renderOnHome: true,
+                        renderOnAdmin: true,
+                        renderOnAnonymous: false,
+                        renderOnLogin: true,
                         order: 4,
                         onEnter: (nextState, replace) => {
 
@@ -64,12 +71,14 @@ export const routes = (store) => {
                 component: HaveToLogginContainer,
                 childRoutes: [
                     {
-                        path: 'admin',
+                        path: '/admin',
                         component: AdminComponent,
                         id: 3,
                         title: 'Admin',
-                        private: true,
-                        onlyPublic: false,
+                        renderOnHome: true,
+                        renderOnAdmin: true,
+                        renderOnAnonymous: false,
+                        renderOnLogin: true,
                         order: 1
                     }
                 ]

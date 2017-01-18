@@ -28,18 +28,67 @@ export const renderLink = (login = false, link = routes(), toReturn = [], linkFa
 
     } else {
 
-        if (!login && link.private)
+        if (!login && !link.renderOnAnonymous)
             return;
 
-        if (login && link.onlyPublic)
+        if (login && !link.renderOnLogin)
+            return;
+
+        if(!link.renderOnHome)
             return;
 
         if (!link.title)
             return;
 
-        let to = linkFather !== '' ?
-            linkFather + '/' + link.path :
-            link.path;
+        let to = linkFather !== '' ? linkFather + '/' + link.path : link.path;
+
+        let linkComponent = (
+            <li key={link.id} order={link.order}>
+                <Link to={to}>
+                    {link.title}
+                </Link>
+            </li>
+        );
+        toReturn.push(linkComponent);
+
+    }
+
+    toReturn = toReturn.sort(compare);
+
+    return toReturn;
+};
+
+export const renderLinkAdmin = (login = false, link = routes(), toReturn = [], linkFather = '') => {
+
+    if (link.childRoutes) {
+
+        if(link.path) {
+            linkFather !== '' &&  linkFather !== '/' ?
+                linkFather += '/' + link.path :
+                linkFather = link.path ;
+        }
+
+        link.childRoutes.forEach((children, index) => {
+            renderLinkAdmin(login, children, toReturn, linkFather);
+        });
+
+    } else {
+
+        if (!login && !link.renderOnAnonymous)
+            return;
+
+        if (login && !link.renderOnLogin)
+            return;
+
+        if(!link.renderOnAdmin)
+            return;
+
+        if (!link.title)
+            return;
+
+
+
+        let to = linkFather !== '' ? linkFather + '/' + link.path : link.path;
 
         let linkComponent = (
             <li key={link.id} order={link.order}>
