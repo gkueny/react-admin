@@ -49,11 +49,12 @@ Les routes qui demandent à ce que l'utilisateur soit connecté sont placées en
 
 ### Les paramètres supplémentaires
 
-Chaque route se doit d'avoir un `id` (utilisé lors du rendu des liens via la fonction `renderLink` du fichier `./src/services/route.service.js`).
+Chaque route se doit d'avoir un `id` (utilisé lors du rendu des liens via la fonction `renderLink` et `renderLinkAdmin` du fichier `./src/services/route.service.js`) (la première fonction retourne les liens pour l'interface principale et la seconde pour les liens de l'interface administrateur).
 
-De plus, si vous voulez que la route soit rendue via la fonction `renderLink(login = false, link = routes(), toReturn = [])`, vous avez besoin d'indiquer également les paramètres :
+De plus, si vous voulez que la route soit rendue via la fonction `renderLink(login = false, link = routes(), toReturn = [])` ou ` renderLinkAdmin(login = false, link = routes(), toReturn = [], linkFather = '')`, vous avez besoin d'indiquer également les paramètres :
 
 - `title` : le titre du lien
-- `private` : Indique si le lien est privée ou non (s'il est privée, alors le lien ne sera rendu que pour les utilisateurs connectés)
-- `onlyPublic` : Indique si le lien ne doit être rendu que si l'utilisateur est déconnecté (la page de login par exemple)
-- `order` : l'ordre du lien.
+- `renderOnHome`: Le lien doit-il être rendu sur l'interface principale?
+- `renderOnAdmin`: Le lien doit-il être rendu sur l'interface administrateur?
+- `renderOnAnonymous`: Le lien doit-il être rendu pour les utilisateurs anonymes?
+- `renderOnLogin`: Le lien doit-il être rendu pour les utilisateurs connectés?
