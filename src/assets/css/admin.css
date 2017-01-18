@@ -9,6 +9,13 @@
     height: 100%;
 }
 
-.Admin p {
+.Admin h1 {
+    text-align: center;
+}
+
+.Admin .content {
     padding: 25px;
+    background-color: #F3F3F1;
+    flex: 1;
+    margin: 0;
 }

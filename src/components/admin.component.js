@@ -14,7 +14,10 @@ class AdminComponent extends Component {
                     </ul>
                 </nav>
 
-                <p> secret </p>
+                <p className="content">
+                    <h1> secret </h1>
+                </p>
+
 
             </div>
         );
