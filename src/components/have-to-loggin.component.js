@@ -13,20 +13,20 @@ class HaveToLogginComponent extends Component {
 
     updateUserStatus = (isLogIn) => {
 
-        if(!isLogIn && this.props.state.general.userLogin) {
+        if(!isLogIn && this.props.state.user.userLogin) {
             this.props.userIsLogout();
-        } else if (isLogIn && !this.props.state.general.userLogin) {
+        } else if (isLogIn && !this.props.state.user.userLogin) {
             this.props.userIsLogin();
         }
 
-        if(!this.props.state.general.userLogin) {
+        if(!this.props.state.user.userLogin) {
             this.props.goToLogin();
         }
     }
 
     render() {
 
-        if (this.props.state.general.userLogin)
+        if (this.props.state.user.userLogin)
             return this.props.children;
         else
             return null;

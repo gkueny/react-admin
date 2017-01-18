@@ -1,5 +1,5 @@
 import {signOutUser} from '../services/user.service';
-import {userIsLogout} from '../actions/general.actions';
+import {userIsLogout} from '../actions/user.actions';
 import {replace} from 'react-router-redux';
 
 import HaveToLogginContainer from '../containers/have-to-loggin.container';

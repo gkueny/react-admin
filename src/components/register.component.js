@@ -21,7 +21,7 @@ class RegisterComponent extends Component {
     }
 
     componentDidUpdate() {
-        if (this.props.state.general.userLogin) {
+        if (this.props.state.user.userLogin) {
             this.props.goToHome();
         }
     }
@@ -43,7 +43,7 @@ class RegisterComponent extends Component {
                 send: false
             });
             this.props.userIsLogout();
-            
+
         }
     }
 

@@ -10,7 +10,7 @@ class AdminComponent extends Component {
             <div className="Admin">
                 <nav>
                     <ul>
-                        {renderLinkAdmin(this.props.state.general.userLogin)}
+                        {renderLinkAdmin(this.props.state.user.userLogin)}
                     </ul>
                 </nav>
 

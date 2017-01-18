@@ -1,20 +1,20 @@
 import {connect} from 'react-redux';
 import { replace } from 'react-router-redux';
-import {userIsLogin, userIsLogout} from '../actions/general.actions';
+import {userIsLogin, userIsLogout} from '../actions/user.actions';
 
 import LoginComponent from '../components/login.component';
 
 const mapStateToProps = (state) => {
     return {
         state: {
-            general : state.general,
+            user : state.user,
         }
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        goToHome: () => dispatch(replace('/')),    
+        goToHome: () => dispatch(replace('/')),
         userIsLogin: () => dispatch(userIsLogin()),
         userIsLogout: () => dispatch(userIsLogout())
     };

@@ -5,7 +5,7 @@ import AdminComponent from '../components/admin.component';
 const mapStateToProps = (state) => {
     return {
         state: {
-            general : state.general,
+            user : state.user,
         }
     };
 };

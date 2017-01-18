@@ -14,7 +14,7 @@ class HeaderComponent extends Component {
                     <h2>Hey ! Bienvenue sur ton application React</h2>
                     <nav>
                         <ul>
-                            {renderLink(this.props.state.general.userLogin)}
+                            {renderLink(this.props.state.user.userLogin)}
                         </ul>
                     </nav>
                 </div>

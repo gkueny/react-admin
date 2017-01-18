@@ -1,13 +1,13 @@
 import {connect} from 'react-redux';
 import {replace} from 'react-router-redux';
-import {userIsLogin, userIsLogout} from '../actions/general.actions';
+import {userIsLogin, userIsLogout} from '../actions/user.actions';
 
 import RegisterComponent from '../components/register.component';
 
 const mapStateToProps = (state) => {
     return {
         state: {
-            general : state.general,
+            user : state.user,
         }
     };
 };

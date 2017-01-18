@@ -21,7 +21,7 @@ class LoginComponent extends Component {
     }
 
     componentDidUpdate() {
-        if (this.props.state.general.userLogin) {
+        if (this.props.state.user.userLogin) {
             this.props.goToHome();
         }
     }
